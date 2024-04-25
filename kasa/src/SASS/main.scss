@@ -1,0 +1,17 @@
+@import './base/base.scss';
+@import './base/colors.scss';
+@import './base/typographies.scss';
+
+@import './components/Banner.scss';
+@import './components/Cart.scss';
+@import './components/Collapse';
+
+//layout
+@import './layout/Footer.scss';
+@import './layout/Header.scss';
+
+// pages
+@import './pages/a-propos';
+@import './pages/accueil';
+@import './pages/error';
+@import './pages/logement';

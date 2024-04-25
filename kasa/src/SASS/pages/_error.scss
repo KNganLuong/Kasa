@@ -1,0 +1,23 @@
+@use '../base/colors' as colors;
+
+.error_container {
+  text-align: center;
+  padding-bottom: 50px;
+
+  h1 {
+    color: colors.$main;
+
+    font-size: 250px;
+  }
+
+  h2 {
+    color: colors.$main;
+    font-weight: 500;
+    font-size: 36;
+    height: 52px;
+  }
+
+  .error_page_link {
+    color: colors.$black;
+  }
+}

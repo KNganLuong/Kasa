@@ -1,0 +1,21 @@
+@use '../base/colors' as colors;
+
+.kasa-header {
+  padding: 50px 0px 50px 0px;
+  display: flex;
+  justify-content: space-between;
+
+  nav {
+    display: flex;
+    gap: 50px;
+    align-items: center;
+
+    a {
+      color: colors.$black;
+      &:hover {
+        border-bottom: solid 1px colors.$black;
+        cursor: pointer;
+      }
+    }
+  }
+}

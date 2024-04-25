@@ -1,0 +1,20 @@
+@use '../base/colors' as colors;
+
+.kasa-footer {
+  background-color: colors.$black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 50px;
+  gap: 10px;
+
+  .kasa-white-logo {
+    width: 120px;
+    height: 40px;
+  }
+
+  .kasa-footer-text {
+    font-size: 24px;
+  }
+}
