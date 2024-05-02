@@ -21,7 +21,7 @@ const router = createBrowserRouter([
     element: <Error />,
   },
   {
-    path: '/logement',
+    path: '/logement/:id',
     element: <Logement />,
   },
 ])

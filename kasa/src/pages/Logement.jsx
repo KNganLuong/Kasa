@@ -1,18 +1,48 @@
-import Header from '../components/Header'
-import Footer from '../components/Footer'
+import Header from '../components/layout/Header'
+import Footer from '../components/layout/Footer'
 import Slideshow from '../components/logement/Slideshow'
 import LogementContent from '../components/logement/LogementContent'
-import Collapse from '../components/Collapse'
+import Collapse from '../components/layout/Collapse'
+import { useEffect, useState } from 'react'
+import { useParams } from 'react-router-dom'
 
 const Logement = () => {
+  const { id } = useParams()
+
+  const [logementData, setData] = useState({})
+
+  useEffect(() => {
+    fetch('../../../logements.json')
+      .then((response) => response.json())
+      .then((data) => {
+        const filterById = data.find((item) => item.id === id)
+        setData(filterById)
+      })
+      .catch((error) =>
+        console.error('Erreur lors de chargement du JSON :', error)
+      )
+  }, [id])
+
   return (
     <div>
       <Header></Header>
-      <div>
-        <Slideshow></Slideshow>
+
+      <div className='logement-container'>
+        {logementData && logementData.pictures && (
+          <Slideshow picturesSrc={logementData.pictures}></Slideshow>
+        )}
+
         <LogementContent></LogementContent>
-        <Collapse></Collapse>
+
+        {logementData && logementData.equipments && (
+          <Collapse data={logementData.equipments}></Collapse>
+        )}
+
+        {logementData && logementData.description && (
+          <Collapse data={logementData.description}></Collapse>
+        )}
       </div>
+
       <Footer></Footer>
     </div>
   )

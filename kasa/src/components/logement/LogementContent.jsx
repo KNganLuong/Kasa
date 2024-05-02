@@ -1,4 +1,4 @@
 const LogementContent = () => {
-  return <div></div>
+  return <div className='logement-content'></div>
 }
 export default LogementContent

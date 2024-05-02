@@ -19,7 +19,7 @@ const Galerie = () => {
   return (
     <ul className='kasa-location-list'>
       {data.map(({ id, cover, title }) => (
-        <LocationItem key={id} cover={cover} title={title} />
+        <LocationItem key={id} cover={cover} title={title} id={id} />
       ))}
     </ul>
   )

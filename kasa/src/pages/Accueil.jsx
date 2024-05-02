@@ -1,8 +1,8 @@
 import Banner from '../components/accueil/Banner'
 import bannerHome from '../assets/bannerHome.webp'
 import Galerie from '../components/accueil/Galerie'
-import Header from '../components/Header'
-import Footer from '../components/Footer'
+import Header from '../components/layout/Header'
+import Footer from '../components/layout/Footer'
 
 const Accueil = () => {
   return (

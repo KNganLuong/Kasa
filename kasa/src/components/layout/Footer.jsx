@@ -1,4 +1,4 @@
-import logoInWhite from '../assets/logoInWhite.png'
+import logoInWhite from '../../assets/logoInWhite.png'
 const Footer = () => {
   return (
     <div className='kasa-footer'>

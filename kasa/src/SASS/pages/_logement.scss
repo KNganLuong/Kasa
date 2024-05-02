@@ -1,0 +1,7 @@
+@use '../base/colors' as colors;
+
+.logement-container {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+}

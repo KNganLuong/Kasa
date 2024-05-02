@@ -1,7 +1,7 @@
-const Slideshow = ({ pictures }) => {
+const Slideshow = ({ picturesSrc }) => {
   return (
-    <div>
-      <img className='Slideshow_pictures' src={pictures}></img>
+    <div className='slideshow-container'>
+      <img className='slideshow-pictures' src={picturesSrc[0]} />
     </div>
   )
 }

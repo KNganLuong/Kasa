@@ -1,13 +1,15 @@
-const LocationItem = ({ title, cover }) => {
+import { Link } from 'react-router-dom'
+
+const LocationItem = ({ title, cover, id }) => {
   return (
-    <li className='kasa-location-item'>
+    <Link to={`/logement/${id}`} className='kasa-location-item'>
       <img
         className='kasa-location-item-cover'
         src={cover}
         alt={`${title} cover `}
       ></img>
       <span className='kasa-location-item-title'>{title}</span>
-    </li>
+    </Link>
   )
 }
 export default LocationItem
