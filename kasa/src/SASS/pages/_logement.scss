@@ -1,7 +1,18 @@
 @use '../base/colors' as colors;
+@use '../base/mixins' as mixins;
+
+.logement-page {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  @include mixins.media-queries(colors.$mobile) {
+    gap: 0px;
+  }
+}
 
 .logement-container {
   display: flex;
   flex-direction: column;
-  gap: 50px;
+  gap: 20px;
+  padding-bottom: 20px;
 }

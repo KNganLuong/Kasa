@@ -1,4 +1,5 @@
 @use './colors' as colors;
+@use './mixins' as mixins;
 
 html {
   // background: $background-color;
@@ -16,7 +17,8 @@ body {
   place-items: center;
   min-width: 320px;
   min-height: 100vh;
-  padding: 0px 90px 0px 90px;
+  padding: 0px 0px 0px 0px;
+  margin: 0;
 }
 
 :root {

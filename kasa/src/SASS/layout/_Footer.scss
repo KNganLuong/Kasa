@@ -1,6 +1,8 @@
 @use '../base/colors' as colors;
+@use '../base/mixins' as mixins;
 
 .kasa-footer {
+  position: absolute;
   background-color: colors.$black;
   display: flex;
   flex-direction: column;
@@ -8,6 +10,9 @@
   justify-content: space-between;
   padding-top: 50px;
   gap: 10px;
+  right: 0;
+  left: 0;
+  bottom: 0;
 
   .kasa-white-logo {
     width: 120px;

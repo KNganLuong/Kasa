@@ -1,14 +1,21 @@
 @use '../base/colors' as colors;
+@use '../base/mixins' as mixins;
 
 .kasa-header {
-  padding: 50px 0px 50px 0px;
+  padding: 50px 90px 50px 90px;
   display: flex;
   justify-content: space-between;
+  @include mixins.media-queries(colors.$mobile) {
+    padding: 30px 20px 30px 20px;
+  }
 
   nav {
     display: flex;
     gap: 50px;
     align-items: center;
+    @include mixins.media-queries(colors.$mobile) {
+      gap: 20px;
+    }
 
     a {
       color: colors.$black;

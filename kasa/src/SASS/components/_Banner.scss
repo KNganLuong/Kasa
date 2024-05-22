@@ -1,9 +1,15 @@
 @use '../base/colors' as colors;
+@use '../base/mixins' as mixins;
 
 .kasa-banner {
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 0px 90px 0px 90px;
+  @include mixins.media-queries(colors.$mobile) {
+    padding: 0px 20px 0px 20px;
+    justify-content: left;
+  }
 
   .kasa-banner-img {
     height: 223px;
@@ -21,5 +27,9 @@
     color: colors.$white;
     font-weight: 700;
     font-size: 48px;
+    @include mixins.media-queries(colors.$mobile) {
+      font-size: 30px;
+      padding-left: 20px;
+    }
   }
 }

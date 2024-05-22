@@ -9,16 +9,17 @@ const Accueil = () => {
     <div>
       <Header></Header>
 
-      <Banner>
-        <img
-          src={bannerHome}
-          alt='Kasa Banner Home'
-          className='kasa-banner-img'
-        ></img>
-        <h1 className='kasa-title'>Chez vous, partout et ailleurs</h1>
-      </Banner>
-
-      <Galerie></Galerie>
+      <main>
+        <Banner>
+          <img
+            src={bannerHome}
+            alt='Kasa Banner Home'
+            className='kasa-banner-img'
+          ></img>
+          <h1 className='kasa-title'>Chez vous, partout et ailleurs</h1>
+        </Banner>
+        <Galerie></Galerie>
+      </main>
 
       <Footer></Footer>
     </div>

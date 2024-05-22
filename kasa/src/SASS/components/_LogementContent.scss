@@ -1,0 +1,85 @@
+@use '../base/colors' as colors;
+@use '../base/mixins' as mixins;
+
+.logement-content {
+  color: colors.$main;
+  display: flex;
+  justify-content: space-between;
+  padding: 0px 90px 0px 90px;
+  @include mixins.media-queries(colors.$mobile) {
+    flex-direction: column;
+    padding: 0 20px 0 20px;
+  }
+
+  .logement-content-header {
+    display: flex;
+    flex-direction: column;
+
+    .location-name {
+      font-size: 36px;
+      font-weight: 500;
+      @include mixins.media-queries(colors.$mobile) {
+        margin-block-start: 0em;
+        margin-block-end: 0em;
+      }
+    }
+
+    .logement-location {
+      color: colors.$black;
+      font-size: 18px;
+      font-weight: 500;
+    }
+    .logement-tag {
+      display: flex;
+      gap: 15px;
+
+      .logement-tag-text {
+        background-color: colors.$main;
+        color: colors.$white;
+        border-radius: 10px;
+        font-size: 14px;
+        font-weight: 700;
+        padding: 5px 35px;
+      }
+    }
+  }
+  .logement-content-info {
+    display: flex;
+    flex-direction: column;
+    @include mixins.media-queries(colors.$mobile) {
+      flex-direction: row-reverse;
+      justify-content: space-between;
+    }
+    .logement-rate {
+      @include mixins.media-queries(colors.$mobile) {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+    }
+
+    .logement-host {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      width: 100px;
+      text-align: right;
+      margin-right: 120px;
+      @include mixins.media-queries(colors.$mobile) {
+        margin-right: 40px;
+      }
+
+      .logement-host-photo {
+        border-radius: 50%;
+        @include mixins.media-queries(colors.$mobile) {
+          height: 50px;
+          width: 50px;
+        }
+      }
+    }
+  }
+}
+
+.rating-star-grey {
+  color: #ccc;
+}

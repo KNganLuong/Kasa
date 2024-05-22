@@ -2,7 +2,7 @@ import Header from '../components/layout/Header'
 import Footer from '../components/layout/Footer'
 import Slideshow from '../components/logement/Slideshow'
 import LogementContent from '../components/logement/LogementContent'
-import Collapse from '../components/layout/Collapse'
+import Collapse from '../components/logement/Collapse'
 import { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 
@@ -24,24 +24,38 @@ const Logement = () => {
   }, [id])
 
   return (
-    <div>
+    <div className='logement-page'>
       <Header></Header>
 
-      <div className='logement-container'>
+      <main className='logement-container'>
         {logementData && logementData.pictures && (
           <Slideshow picturesSrc={logementData.pictures}></Slideshow>
         )}
 
-        <LogementContent></LogementContent>
+        <LogementContent
+          logementTitle={logementData.title}
+          logementLocation={logementData.location}
+          logementHost={logementData.host}
+          logementTag={logementData.tags}
+          logementRating={logementData.rating}
+        ></LogementContent>
 
-        {logementData && logementData.equipments && (
-          <Collapse data={logementData.equipments}></Collapse>
-        )}
+        <div className='logement-collapse'>
+          {logementData && logementData.description && (
+            <Collapse
+              title='Description'
+              content={logementData.description}
+            ></Collapse>
+          )}
 
-        {logementData && logementData.description && (
-          <Collapse data={logementData.description}></Collapse>
-        )}
-      </div>
+          {logementData && logementData.equipments && (
+            <Collapse
+              title='Équipements'
+              content={logementData.equipments}
+            ></Collapse>
+          )}
+        </div>
+      </main>
 
       <Footer></Footer>
     </div>
