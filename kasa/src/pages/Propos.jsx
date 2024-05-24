@@ -1,7 +1,7 @@
 import Header from '../components/layout/Header'
 import Footer from '../components/layout/Footer'
 import Banner from '../components/a-propos/Banner'
-import CollapseAbout from '../components/a-propos/CollapseAbout'
+import Collapse from '../components/layout/Collapse'
 import { aboutContent } from '../data_propos'
 
 const Propos = () => {
@@ -11,12 +11,8 @@ const Propos = () => {
       <main>
         <Banner></Banner>
         <ul className='collapse-container'>
-          {aboutContent.map(({ title, description }) => (
-            <CollapseAbout
-              key={title}
-              title={title}
-              description={description}
-            />
+          {aboutContent.map(({ title, content }) => (
+            <Collapse key={title} title={title} content={content} />
           ))}
         </ul>
       </main>

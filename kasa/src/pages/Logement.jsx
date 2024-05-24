@@ -2,7 +2,7 @@ import Header from '../components/layout/Header'
 import Footer from '../components/layout/Footer'
 import Slideshow from '../components/logement/Slideshow'
 import LogementContent from '../components/logement/LogementContent'
-import Collapse from '../components/logement/Collapse'
+import Collapse from './../components/layout/Collapse'
 import { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 
@@ -40,21 +40,25 @@ const Logement = () => {
           logementRating={logementData.rating}
         ></LogementContent>
 
-        <div className='logement-collapse'>
-          {logementData && logementData.description && (
-            <Collapse
-              title='Description'
-              content={logementData.description}
-            ></Collapse>
-          )}
+        <section className='logement-collapse'>
+          <div className='collapse-container'>
+            {logementData && logementData.description && (
+              <Collapse
+                title='Description'
+                content={logementData.description}
+              ></Collapse>
+            )}
+          </div>
 
-          {logementData && logementData.equipments && (
-            <Collapse
-              title='Équipements'
-              content={logementData.equipments}
-            ></Collapse>
-          )}
-        </div>
+          <div className='collapse-container'>
+            {logementData && logementData.equipments && (
+              <Collapse
+                title='Équipements'
+                content={logementData.equipments}
+              ></Collapse>
+            )}
+          </div>
+        </section>
       </main>
 
       <Footer></Footer>

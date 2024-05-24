@@ -2,17 +2,20 @@ import { useState } from 'react'
 
 const Collapse = ({ title, content }) => {
   const [isShown, setIsShown] = useState(false)
+  // const [typeCollapse, setTypeCollapse] = useState('')
 
-  const showCollapse = () => {
+  const toggleCollapse = () => {
+    // setTypeCollapse(title)
     setIsShown(!isShown)
   }
 
   return (
-    <section className='collapse-container'>
-      <div className='collapse-header' onClick={() => showCollapse()}>
+    <li>
+      <div className='collapse-header' onClick={toggleCollapse}>
         <h3>{title}</h3>
-        <span>{isShown ? '▼' : '▲'}</span>
+        <span>{isShown ? '▲' : '▼'}</span>
       </div>
+
       {isShown && (
         <div className='collapse-text'>
           {Array.isArray(content) ? (
@@ -26,7 +29,7 @@ const Collapse = ({ title, content }) => {
           )}
         </div>
       )}
-    </section>
+    </li>
   )
 }
 
